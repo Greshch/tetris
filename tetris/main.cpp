@@ -1,24 +1,30 @@
 #include <SFML/Graphics.hpp>
+using namespace sf;
+
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Lesson 2. kychka-pc.ru");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Red);
-
+	RenderWindow window(VideoMode(320, 480), "Tetris Game!");
+	// Главный цикл приложения: выполняется, пока открыто окно
 	while (window.isOpen())
 	{
-		sf::Event event;
+		// Обрабатываем события в цикле
+		Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			// Пользователь нажал на «крестик» и хочет закрыть окно?
+			if (event.type == Event::Closed)
+			{
+				// тогда закрываем его
 				window.close();
+			}
 		}
-
-		window.clear();
-		window.draw(shape);
+		// Установка цвета фона - белый
+		window.clear(Color::White);
+		// Отрисовка окна
 		window.display();
 	}
-
+		
+	
 	return 0;
 }

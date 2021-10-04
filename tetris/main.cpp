@@ -11,7 +11,10 @@ int main()
 	//img.loadFromFile("C:\\Users\\user\\projects\\tetris\\images\\tiles.png");//загружаем в него фай
 	Texture texture;
 	//texture.loadFromFile("C:\\Users\\user\\projects\\tetris\\images\\tiles.png");
-	texture.loadFromFile("..\\images\\tiles.png");
+	// 	   Для запуска из самой Vs
+	//texture.loadFromFile("..\\images\\tiles.png");
+	//Для запуска приложения
+	texture.loadFromFile("..\\..\\images\\tiles.png");
 	
 
 	// Создание спрайта
